@@ -4,7 +4,7 @@
     <div class="row justify-content-center mb-5">
         @foreach ($categories as $category)
         <div class="col-md-4">
-            <a href="/categories/{{ $category->slug }}" class="text-decoration-none">
+            <a href="/news?category={{ $category->slug }}" class="text-decoration-none">
             <div class="card bg-dark text-white">
                 <img src="https://picsum.photos/150" class="card-img" alt="{{ $category->name }}">
                 <div class="card-img-overlay d-flex align-items-center p-0">
