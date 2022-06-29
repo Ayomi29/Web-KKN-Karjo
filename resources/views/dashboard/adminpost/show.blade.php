@@ -5,9 +5,9 @@
         <div class="row my-3">
             <div class="col-lg-8">
                 <h1 class="mb-3">{{ $post->title }}</h1>
-                <a href="/dashboard/posts" class="btn btn-success"><span data-feather="arrow-left"></span> Back to my posts</a>
-                <a href="/dashboard/posts/{{ $post->slug }}/edit" class="btn btn-warning"><span data-feather="edit"></span> Edit</a>
-                <form action="/dashboard/posts/{{ $post->slug }}" method="post" class="d-inline">
+                <a href="/dashboard/adminpost" class="btn btn-success"><span data-feather="arrow-left"></span> Back to my posts</a>
+                <a href="/dashboard/adminpost/{{ $post->slug }}/edit" class="btn btn-warning"><span data-feather="edit"></span> Edit</a>
+                <form action="/dashboard/adminpost/{{ $post->slug }}" method="post" class="d-inline">
                   @method('delete')
                   @csrf
                   <button class="btn btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus post ini?')"><span data-feather="x-circle"></span> Delete</button>
@@ -19,7 +19,7 @@
                 <article class="my-3">
                     {!! $post->body !!}
                 </article>
-                <a href="/dashboard/posts" class="text-decoration-none d-block mt-3">Back to Posts</a>        
+                <a href="/dashboard/adminpost" class="text-decoration-none d-block mt-3">Back to Posts</a>        
             </div>
         </div>
     </div>

@@ -13,14 +13,14 @@ class DashboardPostController extends Controller
 {
     public function index()
     {
-        return view('dashboard.posts.index', [
-            'posts' => Post::where('user_id', auth()->user()->id)->get()
+        return view('dashboard.adminpost.index', [
+            'posts' => Post::all()
         ]);
     }
 
     public function create()
     {
-        return view('dashboard.posts.create', [
+        return view('dashboard.adminpost.create', [
             'categories' => Category::all()
         ]);
     }
@@ -50,19 +50,19 @@ class DashboardPostController extends Controller
 
         Post::create($validate);
 
-        return redirect('/dashboard/posts')->with('success', 'Posting anda telah berhasil dibuat!');
+        return redirect('/dashboard/adminpost')->with('success', 'Posting anda telah berhasil dibuat!');
     }
 
     public function show(Post $post)
     {
-        return view('dashboard.posts.show', [
+        return view('dashboard.adminpost.show', [
             'post' => $post
         ]);
     }
 
     public function edit(Post $post)
     {
-        return view('dashboard.posts.edit', [
+        return view('dashboard.adminpost.edit', [
             'post' => $post,
             'categories' => Category::all()
         ]);
@@ -93,7 +93,7 @@ class DashboardPostController extends Controller
 
         Post::where('id', $post->id)->update($validateData);
 
-        return redirect('/dashboard/posts')->with('success', 'Posting anda telah berhasil diupdate!');
+        return redirect('/dashboard/adminposts')->with('success', 'Posting anda telah berhasil diupdate!');
     }
 
     public function destroy(Post $post)
@@ -102,7 +102,7 @@ class DashboardPostController extends Controller
             Storage::delete($post->image);
         }
         Post::destroy($post->id);
-        return redirect('/dashboard/posts')->with('success', 'Posting anda telah berhasil dihapus!');
+        return redirect('/dashboard/adminposts')->with('success', 'Posting anda telah berhasil dihapus!');
     }
     public function checkSlug(Request $request)
     {

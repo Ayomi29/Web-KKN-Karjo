@@ -20,11 +20,20 @@ class DatabaseSeeder extends Seeder
         User::create([
             'name' => 'Ayomi Satria Pratama',
             'username' => 'Ayomisp',
+            'is_admin' => '1',
             'email' => 'ayomisatria@gmail.com',
             'email_verified_at' => now(),
             'password' => bcrypt('12345')
         ]);
-        User::factory(2)->create();
+        User::create([
+            'name' => 'Admin',
+            'username' => 'Admin',
+            'is_admin' => '1',
+            'email' => 'admin_permatasehati@gmail.com',
+            'email_verified_at' => now(),
+            'password' => bcrypt('kwtpermatasehat1')
+        ]);
+        // User::factory(2)->create();
 
         Category::create([
             'name' => 'Tanaman Toga',
@@ -38,6 +47,14 @@ class DatabaseSeeder extends Seeder
             'name' => 'Kegiatan',
             'slug' => 'kegiatan'
         ]);
-        Post::factory(40)->create();
+        Category::create([
+            'name' => 'Hidroponik',
+            'slug' => 'hidroponik'
+        ]);
+        Category::create([
+            'name' => 'Berita Acara',
+            'slug' => 'berita-acara'
+        ]);
+        Post::factory(3)->create();
     }
 }

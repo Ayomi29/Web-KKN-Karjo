@@ -42,7 +42,7 @@
             </div>
             <button class="w-100 mt-3 btn btn-lg btn-primary" type="submit">Login</button>
           </form>
-          <small class="d-block text-center">Belum daftar? <a href="/register"> Daftar sekarang </a> </small>
+          {{-- <small class="d-block text-center">Belum daftar? <a href="/register"> Daftar sekarang </a> </small> --}}
         </main>
     </div>
 </div>

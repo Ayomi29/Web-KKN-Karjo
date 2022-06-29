@@ -4,7 +4,7 @@
     <h1 class="h2">Edit post</h1>
 </div>
 <div class="col-lg-8">
-    <form action="/dashboard/posts/{{ $post->slug }}" method="POST" class="mb-5" enctype="multipart/form-data">
+    <form action="/dashboard/adminpost/{{ $post->slug }}" method="POST" class="mb-5" enctype="multipart/form-data">
         @method('patch')
         @csrf
         <div class="mb-3">
@@ -73,7 +73,7 @@
     const slug = document.querySelector('#slug');
 
     title.addEventListener('change', function() {
-        fetch('/dashboard/posts/checkSlug?title=' + title.value)
+        fetch('/dashboard/adminpost/checkSlug?title=' + title.value)
             .then(response => response.json())
             .then(data => slug.value = data.slug)
     });
