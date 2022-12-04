@@ -64,8 +64,8 @@ Route::get('/dashboard', function () {
 Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
 
-Route::get('/dashboard/categories/checkSlug', [AdminCategorytController::class, 'checkSlug'])->middleware('auth');
-Route::resource('/dashboard/categories', AdminCategoryController::class)->except('show')->middleware('admin');
+// Route::get('/dashboard/categories/checkSlug', [AdminCategorytController::class, 'checkSlug']);
+// Route::resource('/dashboard/categories', AdminCategoryController::class)->except('show');
 
-Route::resource('/dashboard/adminpost', AdminPostController::class)->middleware('auth');
-Route::get('/dashboard/adminpost/checkSlug', [AdminPostController::class, 'checkSlug'])->middleware('auth');
+// Route::resource('/dashboard/adminpost', AdminPostController::class);
+// Route::get('/dashboard/adminpost/checkSlug', [AdminPostController::class, 'checkSlug']);
